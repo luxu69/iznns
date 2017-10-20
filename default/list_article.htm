@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="applicable-device" content="pc">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		
+		
+		<link rel="stylesheet" href="/templets/default/css/body.css" media="all">
+		
+	</head>
+
+	<body>
+
+	{dede:include filename="head.htm"/}
+	
+<!--content-->
+<div class="w960 clearfix">
+	<!--left-->
+	<div class="w645 fl">
+{dede:list pagesize='20' orderby='id' orderway='desc'}
+<div class="list-item bg1 b1 boxshadow">
+		<dl class="clearfix dl-con">
+			<dd>
+				<h1 class="dp-b">
+                    </h1>
+				<div class="content-img clearfix pt10 relative">
+				[field:id function=GetImgs(@me)/]<span class="gifPlayBtn gifLoading" style="margin: -179.5px 0px 0px 141.5px; display: none;"><img src="/images/loading.gif"></span>									</div>
+			</dd>
+		</dl>
+</div>
+{/dede:list}
+		<!--翻页-->
+	<div class="page">
+				<div> {dede:pagelist listitem="index,end,pre,next,pageno" listsize="4"/}</div>			</div>
+	<!--#翻页-->
+	</div>
+	<!--#left-->
+	
+
+{dede:include filename="right.htm"/}
+
+</div>
+<!--#content-->
+		<div class="clear15">
+			
+		</div>
+
+{dede:include filename="footer.htm"/}
+
+</body></html>

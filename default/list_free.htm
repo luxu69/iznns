@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="applicable-device" content="pc">
+
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+		
+		
+		<link rel="stylesheet" href="/templets/default/css/body.css" media="all">
+		
+	</head>
+
+	<body>
+
+	{dede:include filename="head.htm"/}
+	
+<!--content-->
+<div class="w960 clearfix">
+	<!--left-->
+	<div class="w645 fl">
+{dede:freelist/}
+		<!--翻页-->
+	<div class="page">
+				<div> {dede:arcpagelist tagid='index'/}</div>			</div>
+	<!--#翻页-->
+	</div>
+	<!--#left-->
+	
+
+{dede:include filename="right.htm"/}
+
+</div>
+<!--#content-->
+		<div class="clear15">
+			
+		</div>
+
+{dede:include filename="footer.htm"/}
+<script type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+    function multi(pagenum,tagid)
+    {
+      var taget_obj = document.getElementById(tagid);
+      var taget_obj_page = document.getElementById("page_"+tagid);
+      myajax = new DedeAjax(taget_obj,false,false,'','','');
+      myajax.SendGet2("/plus/arcmulti.php?mtype=0&pnum="+pagenum+'&tagid='+tagid);
+      myajax = new DedeAjax(taget_obj_page,false,false,'','','');
+      myajax.SendGet2("/plus/arcmulti.php?mtype=1&pnum="+pagenum+'&tagid='+tagid);
+      DedeXHTTP = null;
+    
+    }
+</script>
+</body></html>
